@@ -1,4 +1,4 @@
 ---
 type: json
-url: wiki.json
+url: api/wiki.json
 ---
