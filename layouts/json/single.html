@@ -1,0 +1,6 @@
+{{- $.Scratch.Add "wiki" slice -}}
+{{- range where (where .Site.Pages "Section" "wiki") ".RelPermalink" "!=" "/wiki/" -}}
+{{- $category := ( .RelPermalink | replaceRE "/wiki/(.+)/(.+)/" "$1" ) -}}
+{{- $.Scratch.Add "wiki" (dict "title" .Title "ref" .RelPermalink "tags" .Params.tags "keywords" .Keywords "category" $category "description" .Description "content" .Plain "weight" .Weight ) -}}
+{{- end -}}
+{{- $.Scratch.Get "wiki" | jsonify -}}

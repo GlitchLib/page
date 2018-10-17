@@ -1,0 +1,15 @@
+- key: getting-started
+  value: Getting Started
+  weight: 0
+- key: essential-knowledge
+  value: Essential Knowledge
+  weight: -100
+- key: basic-tutorials
+  value: Basic Tutorials
+  weight: -200
+- key: advanced-tutorials
+  value: Advanced Tutorials
+  weight: -300
+- key: miscellaneous
+  value: Miscellaneous
+  weight: -400

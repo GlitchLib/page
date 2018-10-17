@@ -1,0 +1,13 @@
+{{ $frontPage := eq .Page.RelPermalink "/" }}
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body{{ if not $frontPage }} class="fixed-nav-padding"{{ end }}>
+        {{ if $frontPage }}{{- partial "header_intro.html" . -}}{{ else }}{{- partial "header.html" . -}}{{ end }}
+        <main role="main" class="container">
+        {{- block "main" . }}{{- end }}
+        </main>
+        {{- partial "footer.html" . -}}
+        {{- partial "scripts.html" . -}}
+    </body>
+</html>

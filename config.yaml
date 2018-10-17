@@ -1,0 +1,42 @@
+title: Glitch
+  
+pygmentsStyle: manni
+pygmentsCodeFences: true
+
+disableKinds:
+  - sitemap
+  - RSS
+
+menu:    
+  main:
+    - name: Wiki
+      url: /wiki
+      weight: 100
+    - name: Releases
+      url: https://github.com/GlitchLib/glitch/releases
+      weight: 200
+    - name: Javadoc
+      url: /docs
+      weight: 300
+    - name: Discord
+      url: https://discord.gg/nJJ2fDM
+      weight: 400
+
+  header_prepend:
+    - name: GitHub
+      url:  https://github.com/GlitchLib/glitch
+      weight: 100
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true

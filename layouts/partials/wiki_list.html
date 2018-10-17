@@ -1,0 +1,27 @@
+<div class="wiki-menu-toggle d-lg-none pb-3">
+  <button class="btn btn-purple btn-block rounded" type="button" data-toggle="collapse" data-target="#wiki-menu" aria-controls="wiki-menu" aria-expanded="false" aria-label="Toggle Navigation">
+    Toggle Navigation
+  </button>
+</div>
+{{ $wiki := newScratch }}
+{{ range where (where .Site.Pages "Section" "wiki") ".RelPermalink" "!=" "/wiki/" }}
+{{ $category := (.RelPermalink | replaceRE "/wiki/(.+)/(.+)/" "$1" ) }}
+{{ if not ($wiki.Get $category) }}
+{{ $wiki.Add $category slice }}
+{{ end }}
+{{ $wiki.Add $category (dict "title" .Title "ref" .RelPermalink "weight" .Weight) }}
+{{ end }}
+<div class="collapse show pb-3" id="wiki-menu">
+  {{ range $.Site.Data.wiki }}
+  {{ $wikiData := ($wiki.Get .key) }}
+  {{ if $wikiData }}
+  <h4>{{ .value }}</h4>
+  <div class="list-group">
+    {{ range sort $wikiData "weight" "desc" }}
+    {{ $samePage := eq .ref $.Page.RelPermalink }}
+    <a class="list-group-item list-group-item-action{{ if $samePage }} active{{ end }}" href="{{ .ref }}">{{ .title }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+  {{ end }}
+</div>

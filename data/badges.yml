@@ -1,0 +1,16 @@
+- name: Status
+  image: https://travis-ci.com/GlitchLib/glitch.svg
+  url: https://travis-ci.com/GlitchLib/glitch
+  weight: 100
+- name: Quality
+  image: https://img.shields.io/lgtm/grade/java/g/GlitchLib/glitch.svg?logo=lgtm&logoWidth=12
+  url: https://lgtm.com/projects/g/GlitchLib/glitch/context:java
+  weight: 200
+- name: Discord
+  weight: 300
+  image: https://discordapp.com/api/guilds/325552783787032576/widget.png
+  url: https://discord.gg/jy9BKGq
+- name: Glitch Discord
+  weight: 400
+  image: https://discordapp.com/api/guilds/488285226452385792/widget.png
+  url: https://discord.gg/nJJ2fDM

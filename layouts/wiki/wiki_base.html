@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="row">
+  <div class="col-lg-3 order-lg-last">
+    {{ partial "wiki_list.html" . }}
+  </div>
+  <div class="col-lg-9 order-lg-first wiki-container">
+    {{.Content}}
+  </div>
+</div>
+{{ end }}

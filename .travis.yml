@@ -1,0 +1,28 @@
+language: python
+
+python:
+  - "3.6"
+
+install: 
+  - sudo apt-get --yes install snapd
+  - sudo snap install hugo --channel=extended
+  - pip install Pygments
+
+before_script:
+  - rm -rf public 2> /dev/null
+  - /snap/bin/hugo version
+
+script:
+  - /snap/bin/hugo --verbose --disableKinds="sitemap,RSS"
+  - if [[ -f CNAME ]]; then cp CNAME public/CNAME; fi
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  verbose: true
+  keep-history: true
+  committer-from-gh: true
+  local-dir: public
+  on:
+    branch: master
