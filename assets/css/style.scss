@@ -2,6 +2,33 @@
 @import "mdb/mdb";
 @import "syntax";
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.btn {
+  border-radius: .4rem;
+
+  &.btn-purple {
+    background-color: #6441A4!important;
+  }
+
+  &.btn-outline-purple {
+    color: #6441A4!important;
+    border-color: #6441A4!important;
+  }
+}
+
+.rgba-purple-light {
+  background-color: rgba(#6441A4, .3)!important;
+}
+
+h1, h2, h3 {
+  border-bottom: 1px solid $gray-500;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -9,6 +36,25 @@ html {
 
 body.fixed-nav-padding {
   padding-top: 5rem;
+}
+
+body{
+  background: #efefef;
+
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+    background-color: #F5F5F5;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #6441A4!important;
+    border: 1px solid #F5F5F5;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+  }
 }
 
 .intro {
@@ -49,37 +95,69 @@ header.main-page,
   height: 32px;
 }
 
-body::-webkit-scrollbar {
-  width: 0.4rem;
-  background-color: #F5F5F5;
-}
-
-body::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  background-color: #6441A4!important;
-}
-
-body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-  background-color: #F5F5F5;
-  border-radius: 10px;
-}
-
 .wiki-menu-toggle .btn-purple {
   background-color: #6441A4!important;
   border-radius: .5rem!important;
 }
 
-#wiki-menu .list-group {
+#wiki-menu .list-group {  
   display: block;
   border-radius: 1rem!important;
-}
+  border: 1px solid $gray-300;
+  border-radius-color: $gray-300;
 
-#wiki-menu .list-group .list-group-item.active {
-  background-color: #6441A4!important;
+  .list-group-item {
+    &.active {
+      background-color: #6441A4;
+      border-color: #6441A4;
+    }
+
+    &:first-child {
+      border-top-left-radius: .3rem;
+      border-top-right-radius: .3rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom-left-radius: .3rem;
+      border-bottom-right-radius: .3rem;
+    }
+  }
 }
 
 footer.purple {
   background-color: #6441A4!important;
+}
+
+.wiki-container {
+  #wiki-headline {
+    font-size: 6rem;
+    font-weight: 900!important;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  #wiki-footer {
+    padding: 1rem;
+    border: 1px solid $gray-400;
+    border-radius: .5rem;
+    background-color: $white;
+  }
+
+  blockquote {
+    padding: $blockquote-padding-y $blockquote-padding-x;
+    border-left: .25rem solid #eceeef;
+  }
+
+  ol {
+    counter-reset: item;
+    list-style-type: none;
+    li::before {
+      counter-increment: item;
+      position: absolute;
+      left: 2rem;
+      content: counter(item) ".";
+      font-weight: bold;
+    }
+  }
 }

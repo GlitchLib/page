@@ -4,7 +4,14 @@
     {{ partial "wiki_list.html" . }}
   </div>
   <div class="col-lg-9 order-lg-first wiki-container">
+    <h1 id="wiki-headline">{{ .Title }}</h1>
     {{.Content}}
+    <div id="wiki-footer">Feel free to join <b>Glitch Discord server</b> if you have any questions: <a href="https://discord.gg/nJJ2fDM">Invite Link</a></div>
+    <p class="text-center">
+      {{ if .IsPage }}
+      <a class="btn btn-purple" href="https://github.com/GlitchLib/glitchlib.github.io/edit/master/content/{{ replace .File.Path "\\" "/" }}"> Improve this page</a>
+      {{ end }}
+    </p>
   </div>
 </div>
 {{ end }}
