@@ -1,26 +1,13 @@
 ---
-title: Welcome
+title: Eclipse Setup
 layout: wiki_base
-aliases:
-  - /wiki
-  - /wiki/getting-started
-weight: 0
+weight: -200
 ---
-![](/img/glitch-mug-typo.svg)
+# Importing
 
-## Introduction
+## Gradle
 
-Welcome to the Glitch wiki! You can find all important threads on the right side of the page.
-
-# Download / Installation
-
-We shall recommend use a build managers, like a [Gradle](https://gradle.org/) or [Maven](https://maven.apache.org/).
-
-If you don't have familiar with those build managers, you can follow on the setup guides or download Glitch directly via [Bintray](https://bintray.com/stachu540/GlitchLib/Glitch/_latestVersion) repository
-
-### Dependency
-
-#### Gradle - Groovy DSL
+### Groovy DSL
 
 ```groovy
 plugins {
@@ -44,7 +31,7 @@ dependencies {
 }
 ```
 
-#### Gradle - Kotlin DSL
+### Kotlin DSL
 
 ```kotlin
 plugins {
@@ -68,16 +55,9 @@ dependencies {
 }
 ```
 
-#### Maven
+## Maven
 
 ```xml
-<repositories>
-  <repository>
-    <id>GlitchLib</id>
-    <url>https://dl.bintray.com/stachu540/GlitchLib</url>
-  </repository>
-</repositories>
-
 <dependencyManagement>
   <dependencies>
     <dependency>
@@ -101,19 +81,3 @@ dependencies {
   </dependency>
 </dependencies>
 ```
-
-# IDE Setup
-
-If you’ve never used Gradle or Maven before, you should take a look at the setup tutorial:
-
-- [**IntelliJ**](/wiki/getting-started/intellij/) (recommended)
-- [**Eclipse**](/wiki/getting-started/eclipse/)
-- [**Netbeans**](/wiki/getting-started/netbeans/)
-
-# Support
-
-Glitch and Twitch API Discord's is an excellent place if you have questions about the library.
-
-# Examples
-
-We will deliver it [ASAP](https://www.urbandictionary.com/define.php?term=asap).

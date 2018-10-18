@@ -1,9 +1,9 @@
 ---
-title: Importing Dependencies
+title: Netbeans Setup
 layout: wiki_base
-weight: -100
+weight: -300
 ---
-# Importing
+# Before Starting
 
 ## Gradle
 
