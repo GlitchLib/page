@@ -1,12 +1,11 @@
-language: python
-
-python:
-  - "3.6"
+language: bash
+addons:
+  apt:
+    packages:
+      - snap
 
 install: 
-  - sudo apt-get --yes install snapd
   - sudo snap install hugo --channel=extended
-  - pip install Pygments
 
 before_script:
   - rm -rf public 2> /dev/null
@@ -20,7 +19,6 @@ deploy:
   provider: pages
   github-token: $GITHUB_TOKEN
   verbose: true
-  keep-history: true
   committer-from-gh: true
   local-dir: public
   on:
