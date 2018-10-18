@@ -5,7 +5,7 @@
   </div>
   <div class="col-lg-9 order-lg-first wiki-container">
     <h1 id="wiki-headline">{{ .Title }}</h1>
-    {{.Content}}
+    {{ .Content | emojify }}
     <div id="wiki-footer">Feel free to join <b>Glitch Discord server</b> if you have any questions: <a href="https://discord.gg/nJJ2fDM">Invite Link</a></div>
     <p class="text-center">
       {{ if .IsPage }}
