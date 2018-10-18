@@ -21,20 +21,11 @@ Install it and configure environmental variables: `JAVA_HOME` if not exist, crea
 
 **IntelliJ IDEA** is a special programming environment or **Integrated Development Environment** (IDE) largely meant for **Java**. This environment is used especially for the development of programs. It is developed by a company called **JetBrains**, which was formally called **IntelliJ**. It is available in two editions: the Community Edition which is licensed by Apache 2.0, and a commercial edition known as the Ultimate Edition. Both of them can be used for creating software which can be sold. What makes **IntelliJ IDEA** so different from its counterparts is its ease of use, flexibility and its solid design.
 
-- [Editions Comparison](https://www.jetbrains.com/idea/#edition)
-- [Download](https://www.jetbrains.com/idea/download/)
+<p class="text-center">
+  <a href="https://www.jetbrains.com/idea/download/" class="btn btn-purple text-center">Download</a>
+  <a href="https://www.jetbrains.com/idea/#edition" class="btn btn-outline-purple text-center">Editions Comparison</a>
+</p>
 
 # Setup
 
-1. Launch IDE
-2. Create New Project [`File` > `New` > `Project`]
-3. Select `Gradle`
-4. Make sure if you select `Project SDK` to `1.8` or greater
-5. Click `Next`
-6. Enter a `GroupId` (e.g. `com.github.yourname`)
-
-    > You can choose whatever you want
-
-7. Enter a `ArtifactId` (e.g. `bot`)
-
-    > You can choose whatever you want
+Soon :tm:

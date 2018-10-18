@@ -10,6 +10,9 @@
 - key: advanced-tutorials
   value: Advanced Tutorials
   weight: -300
+- key: faq
+  value: FAQ
+  weight: -400
 - key: miscellaneous
   value: Miscellaneous
-  weight: -400
+  weight: -500

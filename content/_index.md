@@ -5,12 +5,11 @@ title: Home
 
 # Why Glitch?
 
----
 Soon &trade;
 
-# Here are some examples!
+## Here are some examples!
 
-### Listen the message
+#### Listen the message
 
 A simple template to start, logging and `!ping` with anwsering `Pong!`?It is possible to do with this example below.</p>
 
@@ -33,7 +32,7 @@ public class MyExampleBot {
 }
 ```
 
-### Give him some power for ban hammer users
+#### Give him some power for ban hammer users
 
 For your granting wish we provide a ban hammer power with a including methods inside the `MessageEvent`.
 
