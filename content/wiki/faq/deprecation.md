@@ -1,5 +1,7 @@
 ---
-title: Deprecation
+title: Deprecation Policy/FAQ
 layout: wiki_base
-weight: -100
+weight: -200
 ---
+
+Soom :tm:
