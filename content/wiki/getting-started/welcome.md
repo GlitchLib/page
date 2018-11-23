@@ -116,4 +116,7 @@ Glitch and Twitch API Discord's is an excellent place if you have questions abou
 
 # Examples
 
-We will deliver it [ASAP](https://www.urbandictionary.com/define.php?term=asap).
+- [Client](/wiki/basic-tutorials/client/)
+- [Chat](/wiki/basic-tutorials/chat/)
+- [PubSub](/wiki/basic-tutorials/pubsub/)
+- [Kraken/Helix](/wiki/basic-tutorials/api/)

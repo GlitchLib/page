@@ -5,12 +5,11 @@ title: Home
 
 # Why Glitch?
 
----
 Soon &trade;
 
-# Here are some examples!
+## Here are some examples!
 
-### Listen the message
+#### Listen the message
 
 A simple template to start, logging and `!ping` with anwsering `Pong!`?It is possible to do with this example below.</p>
 
@@ -22,7 +21,12 @@ public class MyExampleBot {
       properties.load("glitch.properties");
     } catch (IOException ignore) {}
 
-    GlitchChat client = GlitchClient.builder().build().flatMap(client -> GlitchChat.builder(client).build()).blockingGet();
+    GlitchChat client = GlitchClient.builder()
+          .clientId(properties.getProperty("twitch.client_id"))
+          .clientSecret(properties.getProperty("twitch.client_secret"))
+         .buildAsync().flatMap(client -> GlitchChat.builder(client)
+                .botCredentials(properties.getProperty("twitch.bot.access_token"), properties.getProperty("twitch.bot.refresh_token"))
+                .buildAsync()).block();
 
     client.listenOn(MessageEvent.class).subscribe(event -> {
       if (event.getMessage().equalsIgnoreCase("!ping")) {
@@ -33,14 +37,14 @@ public class MyExampleBot {
 }
 ```
 
-### Give him some power for ban hammer users
+#### Give him some power for ban hammer users
 
 For your granting wish we provide a ban hammer power with a including methods inside the `MessageEvent`.
 
 ```java
 client.listenOn(MessageEvent.class).subscribe(event -> {
   if (event.getMessage().match("([nN(|\|)][iI1(|)][gG]+[eEaA43][rR]*?)")) {
-    event.banUser(String.format("Saying: %s", event.getMessage()));
+    event.getUser().subscribe(user -> user.ban(String.format("Saying: %s", event.getMessage()).subscribe()));
   }
 });
 ```

@@ -3,81 +3,27 @@ title: Eclipse Setup
 layout: wiki_base
 weight: -200
 ---
-# Importing
+# Before Starting
 
-## Gradle
+#### Download
 
-### Groovy DSL
+##### Java Development Kit (JDK)
 
-```groovy
-plugins {
-  id "io.spring.dependency-management" version "1.0.6.RELEASE"
-}
+Install it and configure environmental variables: `JAVA_HOME` if not exist, create and adding to `PATH` - `$JAVA_HOME/bin`.
 
-repositories {
-  jcenter()
-  maven { url "https://dl.bintray.com/stachu540/GlitchLib" }
-}
+- [JDK8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+- [JDK11](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html).
 
-dependencyManagement {
-  imports {
-    mavenBom "io.glitchlib:glitch-BOM:$glitch_version"
-  }
-}
+##### Integrated Development Environment (IDE)
 
-dependencies {
-  compile "io.glitchlib:glitch-core"
-  compile "io.glitchlib:glitch-kraken"
-}
-```
+<p class="text-center">
+  <a href="https://www.eclipse.org/downloads/" class="btn btn-purple text-center">Download</a>
+</p>
 
-### Kotlin DSL
+**Eclipse** is an open-source platform of extensible software development application frameworks, tools and run times that was initially created as a _Java-based **Integrated Development Environment**_ (IDE). 
 
-```kotlin
-plugins {
-  id("io.spring.dependency-management") version "1.0.6.RELEASE"
-}
+Eclipse's runtime system is based on a collection of **Equinox Open Services Gateway Initiative** (OSGi) runtime-built open-source projects covering **Java IDE**, **static/dynamic languages**, **thick/thin-client** and **server-side frameworks**, **modeling/business reporting** and **embedded/mobile systems**.
 
-repositories {
-  jcenter()
-  maven("https://dl.bintray.com/stachu540/GlitchLib")
-}
+# Setup
 
-configure<DependencyManagementExtension> {
-  imports {
-    mavenBom("io.glitchlib:glitch-BOM:$glitch_version")
-  }
-}
-
-dependencies {
-  compile("io.glitchlib:glitch-core")
-  compile("io.glitchlib:glitch-kraken")
-}
-```
-
-## Maven
-
-```xml
-<dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>io.glitchlib</groupId>
-      <artifactId>glitch-BOM</artifactId>
-      <version>${glitch.version}</version>
-      <type>pom</type>
-      <scope>import</scope>
-    </dependency>
-  </dependencies>
-</dependencyManagement>
-
-<dependencies>
-  <dependency>
-    <groupId>io.glitchlib</groupId>
-    <artifactId>glitch-core</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>io.glitchlib</groupId>
-    <artifactId>glitch-kraken</artifactId>
-  </dependency>
-</dependencies>
-```
+Soon :tm:
