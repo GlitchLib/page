@@ -1,7 +1,7 @@
 ---
 title: Message Interface
 layout: wiki_base
-weight: -100
+weight: -200
 ---
 
 <blockquote class="alert alert-info" role="alert">
@@ -67,12 +67,8 @@ chat.on(ModerationEvent.class).subscribe(event -> {
     event.sendMessage(Mono.just(String.format("%s has been banned from this channel!", event.getUser().getMentionable())));
   }
 });
-<<<<<<< HEAD
 ```
 
 ## Using Commands API
 
 Soon :tm:
-=======
-```
->>>>>>> 95c80893995225e4606eab6af2d7a3cd2a60bbce
