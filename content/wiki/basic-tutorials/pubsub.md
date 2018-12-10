@@ -1,7 +1,7 @@
 ---
 title: PubSub
 layout: wiki_base
-weight: -200
+weight: -300
 ---
 
 <blockquote class="alert alert-info" role="alert">
