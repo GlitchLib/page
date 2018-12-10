@@ -4,12 +4,6 @@ layout: wiki_base
 weight: -100
 ---
 
----
-title: Message Interface
-layout: wiki_base
-weight: -200
----
-
 <blockquote class="alert alert-info" role="alert">
 All endpoints will returns a <a href="https://projectreactor.io/docs/core/release/reference/#mono">Mono</a> or <a href="https://projectreactor.io/docs/core/release/reference/#flux">Flux</a> response. Other way will be commented <i>inside the example</i>.
 </blockquote>
