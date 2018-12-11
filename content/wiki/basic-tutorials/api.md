@@ -85,7 +85,7 @@ Same rules like aboved, but you provides `Long` id's not `String`. To formatting
 kraken.use(UserService.class).flatMap(service -> service.getUserById(12826))
 ```
 
-### Helix
+#### Helix
 
 ```java
 helix.use(UserService.class).flatMapMany(service -> service

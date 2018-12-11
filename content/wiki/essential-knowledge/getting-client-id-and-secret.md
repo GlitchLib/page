@@ -23,7 +23,7 @@ All presented screenshots are be only on view. Presented <b>Client ID</b> and <b
 <img src="https://i.imgur.com/2ITNxaO.png" alt="step 5" class="img-fluid"/>
 
 6. Fill the all of those fields.
-<img src="https://i.imgur.com/picDuQG.png" alt="step 6" class="img-fluid"/>
+<img src="https://i.imgur.com/gdnXhcd.png" alt="step 6" class="img-fluid"/>
 
 7. After filling fields press **Create**
 <img src="https://i.imgur.com/UgcD3to.png" alt="step 7" class="img-fluid"/>
