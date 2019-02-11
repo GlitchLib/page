@@ -38,19 +38,6 @@ Before starting configuration this IDE we need [download IDE](https://www.jetbra
 	* Set **Gradle JVM** if module couldn't found `JAVA_HOME` variable we should add it manually using three dots (`...`) button.
 	* Press **OK** and wait till IDE finished importing dependencies
 	
-* Next step is install [Lombok Plugin](/wiki/miscellaneous/project-lombok/#intellij).
-	
-* Final step is **Annotation Processors**
-	
-	Project will not import all configurations to the IDE. We should do manually.
-	Same way like the Lombok (**File** > **Settings**) but we going to **Build, Execution, Deployment** > **Compiler** > **Annotation Processors**.
-	* Check **Enable annotation processing**
-	* Select **Module content root**
-	* Change sources directory to:
-		* **Production sources directory**: `build\generated\source\apt\main`
-		* **Test sources directory**: `build\generated\source\apt\test`
-	* Press **OK**
-	
 ### Eclipse
 [Eclipse](https://www.eclipse.org) is another choice for advancements programming and old known IDE before IntelliJ.
 Before starting configuration this IDE we need [download IDE](https://www.eclipse.org/downloads/) and install [Lombok](/wiki/miscellaneous/project-lombok/) using installer.
@@ -74,15 +61,6 @@ Before starting configuration this IDE we need [download IDE](https://www.eclips
 	- On the *right side* ide you will find a distinctive a Gradle elephant logo. Click him to expand **Gradle Task View** tab. You will find this message `There are no Gradl;e projects in the current workspace. Import a Gradle project to see its tasks in the Gradle Task View`. Click to **Import a Gradle Project**
 	- Specify a **Project root directory** if this field is empty. Sometimes we need specify a Working sets. Create them one using **New** button, and choose **Resource**. Before finishing and selecting our project we must naming a **Working set name**. Than click **Finish**.
 	
-* Final step is activate **Annotation Processing**
-
-	- Right click on the project and select Properties.
-    - Open **Java Compiler** > **Annotation Processing**. Check **Enable annotation processing**.
-	- Change sources directory to:
-		* **Generated source directory**: `build\generated\source\apt\main`
-		* **Generated test source directory**: `build\generated\source\apt\test`
-	- Confirm changes pressing **Apply and Close**
-	
 ### Netbeans
 [NetBeans](https://www.eclipse.org) IDE is a free and open source integrated development environment for application development on Windows, Mac, Linux, and Solaris operating systems. The IDE simplifies the development of web, enterprise, desktop, and mobile applications that use the Java and HTML5 platforms. The IDE also offers support for the development of PHP and C/C++ applications. Project is associate by Oracle Corporation.
 
@@ -100,7 +78,7 @@ To get started we need first a [Gradle Support](http://plugins.netbeans.org/plug
   - In next step select **Checkout Branch** to `dev`, and click **Finish**
   - After cloned project will show information alert when asking us when we want open this project. We will do pressing **Open Project**
 
-Now IDE will automatically finds a Gradle project and will execute tasks for preparing project to start coding. No configuration of Annotation processing, no more adding Lombok plugins stuffs like. Everything is on the Gradle Plugin.
+Now IDE will automatically finds a Gradle project and will execute tasks for preparing project to start coding. Everything is on the Gradle Plugin.
 
 # How to contribute to Glitch
 
@@ -132,7 +110,8 @@ Before starting pull request make sure if:
 
 #### Style Requirements
 
-* All instanced objects should have **getters** and **setters** using [Project Lombok](/wiki/miscellaneous/project-lombok/) (where reasonable)
+* All instanced objects should have **getters** and **setters** (where reasonable)
+* All POJO classes must be a Kotlin `data class`
 * All object instances, methods and fields must be documented for getting sure what does things are doing.
 * All implementation subjects are be optional to documenting. Any classes with `Impl` suffix are be ignorable from compiler.
 * Documented notes (backslashes `//` or slashed stars `/* */`) is optional into inside methods for getting sure what does things are doing.
