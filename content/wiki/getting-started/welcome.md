@@ -20,7 +20,32 @@ If you don't have familiar with those build managers, you can follow on the setu
 
 ### Dependency
 
-#### Gradle - Groovy DSL
+#### Gradle
+
+##### Using `glitch-bom`
+
+In Gradle 5.0+ you will not need a Spring Dependency Management, because in this version managed dependency has been implemented. Older versions needs to manage dependecy if you using `glitch-bom`.
+
+##### Groovy-DSL
+
+* `5.0+`
+
+```groovy
+repositories {
+  jcenter()
+  maven { url "https://dl.bintray.com/stachu540/GlitchLib" }
+}
+
+dependencies {
+  compile enforcedPlatform("io.glitchlib:glitch-bom:$glitch_version")
+  compile "io.glitchlib:glitch-core"
+  compile "io.glitchlib:glitch-kraken"
+  // also you can use glitch-all without using BOM
+  compile "io.glitchlib:glitch-all:$glitch_version"
+}
+```
+
+* Older
 
 ```groovy
 plugins {
@@ -34,17 +59,38 @@ repositories {
 
 dependencyManagement {
   imports {
-    mavenBom "io.glitchlib:glitch-BOM:$glitch_version"
+    mavenBom "io.glitchlib:glitch-bom:$glitch_version"
   }
 }
 
 dependencies {
   compile "io.glitchlib:glitch-core"
   compile "io.glitchlib:glitch-kraken"
+  // also you can use glitch-all without using BOM
+  compile "io.glitchlib:glitch-all:$glitch_version"
 }
 ```
 
-#### Gradle - Kotlin DSL
+##### Kotlin-DSL
+
+* `5.0+`
+
+```kotlin
+repositories {
+  jcenter()
+  maven("https://dl.bintray.com/stachu540/GlitchLib")
+}
+
+dependencies {
+  compile(enforcedPlatform("io.glitchlib:glitch-bom:$glitch_version"))
+  compile("io.glitchlib:glitch-core")
+  compile("io.glitchlib:glitch-kraken")
+  // also you can use glitch-all without using BOM
+  compile("io.glitchlib:glitch-all:$glitch_version")
+}
+```
+
+* Older
 
 ```kotlin
 plugins {
@@ -65,8 +111,11 @@ configure<DependencyManagementExtension> {
 dependencies {
   compile("io.glitchlib:glitch-core")
   compile("io.glitchlib:glitch-kraken")
+  // also you can use glitch-all without using BOM
+  compile("io.glitchlib:glitch-all:$glitch_version")
 }
 ```
+
 
 #### Maven
 
@@ -98,6 +147,12 @@ dependencies {
   <dependency>
     <groupId>io.glitchlib</groupId>
     <artifactId>glitch-kraken</artifactId>
+  </dependency>
+  <!-- also you can use glitch-all without using BOM -->
+  <dependency>
+    <groupId>io.glitchlib</groupId>
+    <artifactId>glitch-all</artifactId>
+    <version>${glitch.version}</version>
   </dependency>
 </dependencies>
 ```
