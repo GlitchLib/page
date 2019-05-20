@@ -18,7 +18,7 @@ title: Home
   <div class="row pb-4">
     <div class="col-lg-2 col-md-3 col-sm-4 text-center">
       <i class="fas fa-3x fa-rocket" style="color:#6441a4"></i>
-      <h4>Fastet than light</h4>
+      <h4>Faster than light</h4>
     </div>
     <div class="col-lg-10 col-md-9 col-sm-8">
       <p>With reactive streams, the response time minimalize risk throwing any <code>Exception</code>. You choose which response can will be.</p>
