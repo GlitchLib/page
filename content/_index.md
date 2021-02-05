@@ -1,87 +1,19 @@
 ---
-layout: index
-title: Home
+layout: goodbye
+title: Goodbye
 ---
 
-# Why Glitch?
+## Time to say goodbye
 
-<div>
-  <div class="row pb-4">
-    <div class="col-lg-2 col-md-3 col-sm-4 text-center">
-      <i class="fab fa-4x fa-react" style="color:#6441a4"></i>
-      <h4>Reactive Streams</h4>
-    </div>
-    <div class="col-lg-10 col-md-9 col-sm-8">
-      <p>With <a href="https://projectreactor.io"><b>Project Reactor</b></a>, reactive streams is soo easy to use. Without blocking <code>IO</code> we can build a awesome tools using <code>JVM</code> environment.</p>
-    </div>
-  </div>
-  <div class="row pb-4">
-    <div class="col-lg-2 col-md-3 col-sm-4 text-center">
-      <i class="fas fa-3x fa-rocket" style="color:#6441a4"></i>
-      <h4>Faster than light</h4>
-    </div>
-    <div class="col-lg-10 col-md-9 col-sm-8">
-      <p>With reactive streams, the response time minimalize risk throwing any <code>Exception</code>. You choose which response can will be.</p>
-    </div>
-  </div>
-  <div class="row pb-4">
-    <div class="col-lg-2 col-md-3 col-sm-4 text-center">
-      <i class="fab fa-4x fa-android" style="color:#6441a4"></i>
-      <h4>Android</h4>
-    </div>
-    <div class="col-lg-10 col-md-9 col-sm-8">
-      <p><code>API</code> and <code>CredentialManager</code> can be supportive for Android's. You choose what you quering request to the <code>API</code> and which user you need manage to your appliaction.</p>
-    </div>
-  </div>
-  <div class="row pb-4">
-    <div class="col-lg-2 col-md-3 col-sm-4 text-center">
-      <img src="/img/logo/kotlin.svg" width="56" height="56" class="pb-1" />
-      <h4>Kotlin</h4>
-    </div>
-    <div class="col-lg-10 col-md-9 col-sm-8">
-      <p>Supports <b>Kotlin</b> we will provide many options for your code. We can simplify your work, provides supports for this programming language which it is <b>Kotlin</b>.</p>
-    </div>
-  </div>
-</div>
+The journey ends here. Now we gotta move on. Keeping coding and giving people new faith.
 
-## Here are some examples!
+While pandemic gives me opurtunity to thinks what I am gonna do. Now I have decide to close up this story of the **Glitch**.
+Over the 2 years coding this lib and leaving that unmaintained, lonley wihout the ideas, features etc. Now I can say it, enough.
+This is gives me change my plans of this lib and also [this one](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/) changes everything.
 
-#### Listen the message
+I'm gonna continue my chapter, to help maintain **Twitch4J** library. Now I have finished [new website](https://twitch4j.github.io/) for them.
+I can still help them for more. I have trying to return this place. Now gonna finish my project and try migrate some projects from Bintray to Central. I have to.
 
-A simple template to start, logging and `!ping` with anwsering `Pong!`?It is possible to do with this example below.
+In the final words. Thank you soo much to be part of the journey. See you someday after pandemic is over. We will meet again.
 
-```java
-public class MyExampleBot {
-  public static void main(String[] args) {
-    Property properties = new Property();
-    try {
-      properties.load("glitch.properties");
-    } catch (IOException ignore) {}
-
-    GlitchChat client = GlitchClient.builder()
-          .clientId(properties.getProperty("twitch.client_id"))
-          .clientSecret(properties.getProperty("twitch.client_secret"))
-         .buildAsync().flatMap(client -> GlitchChat.builder(client)
-                .botCredentials(properties.getProperty("twitch.bot.access_token"), properties.getProperty("twitch.bot.refresh_token"))
-                .buildAsync()).block();
-
-    client.listenOn(MessageEvent.class).subscribe(event -> {
-      if (event.getMessage().equalsIgnoreCase("!ping")) {
-        event.getChannel().send("Pong!");
-      }
-    });
-  }
-}
-```
-
-#### Give him some power for ban hammer users
-
-For your granting wish we provide a ban hammer power with a including methods inside the `MessageEvent`.
-
-```java
-client.listenOn(MessageEvent.class).subscribe(event -> {
-  if (event.getMessage().match("([nN(|\|)][iI1(|)][gG]+[eEaA43][rR]*?)")) {
-    event.getUser().subscribe(user -> user.ban(String.format("Saying: %s", event.getMessage()).subscribe()));
-  }
-});
-```
+***DZIĘKUJE*** :)
